@@ -22,7 +22,7 @@ right  = 2.75cm]{geometry}
 \newtheorem{definition}{Definition}
 \numberwithin{equation}{subsection}
 
-\title{Analysis}
+\title{Analysis 1}
 \author{SemesterOne analysis at EPFL}
 \date{\vspace{-5ex}}
 \newtheorem{example}{Example}[section]
@@ -273,7 +273,7 @@ If $a < b$ are real numbers, then $\exists c \in \mathbb{Q}, a < c < b$
 
 \begin{proof}
 Now our goal is to show that for any real number $a,b$ we can always find such a $c$. 
-Now take some arbitrary $n$ and set it to $n = [ \frac{1}{b-a}] + 1$ Now clearly, $n>\frac{1}{b-a}$ and hence $\frac{1}{n} < b-a$. We will now use this result. Realize that $a = \frac{an}{n} < \frac{[an + 1]}{n} \leq \frac{an + 1}{n} = a + \frac{1}{n} < a + b - a = b$ Therefore, we have found that $a < \frac{[an]+1}{n}< b$ where $c = \frac{[an]+1}$
+Now take some arbitrary $n$ and set it to $n = [ \frac{1}{b-a}] + 1$ Now clearly, $n>\frac{1}{b-a}$ and hence $\frac{1}{n} < b-a$. We will now use this result. Realize that $a = \frac{an}{n} < \frac{[an + 1]}{n} \leq \frac{an + 1}{n} = a + \frac{1}{n} < a + b - a = b$ Therefore, we have found that $a < \frac{[an]+1}{n}< b$ where $c = \frac{[an]+1}{n}$
    
     \tag*{\qedhere}
 \end{proof}
@@ -527,6 +527,16 @@ If $\lim_{n\to\infty}{x_{n}}=0$ and $y_{n}$ is bounded, then $\lim_{n\to\infty}{
 \begin{proof}
 Now because $y_{n}$ is bounded, we have that $\exists M$ s.t. $M\geq y_{n} \forall n$. Hence we obtain that $x_{n}y_{n} \leq Mx_{n}$ and clearly since $Mx_{n}$ converges to $0$ we have squeezed $x_{n}y_{n}$ and have that it also converges to 0. 
 \end{proof}
+
+\begin{example}
+And let's now look at the limit of a recursive sequence. Let $x_{n+1} = \frac{\sin{x_{n}}}{2}$ with $x_{0} = 0$. Now using the fact that $0 \leq\sin{x}\leq x$ we get that $$|x_{n}| = \frac{|\sin{x_{n-1}|}}{2} \leq \frac{|x_{n-1}|}{2} \leq \frac{|x_{n-2}|}{2\cdot2}\leq \ldots \leq \frac{|x_{0}|}{2^n} \leq \frac{1}{2^n}$$
+Hence we have squeezed our sequence between 0 and 0 giving us that it also approaches 0.  
+\end{example}
+
+\begin{theorem}(Quotient criterion) 
+Let $x_{n}$ be a sequence s.t. $q = \lim_{n\to\infty}{\frac{|x_{n+1}|}{|x_{n}|}$
+If $q<1$, $x_{n}$ converges to 0, otherwise(excluding q = 1) it diverges. 
+\end{theorem}
 
 
 
